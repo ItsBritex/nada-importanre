@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favico.ico" type="image/x-icon">
+    <title>Nada Importante</title>
+    <style>
+        @keyframes parpadeo {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        body{
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            background-color: black;
+            color: white;
+            height: 100vh;
+        }
+        nav {
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(51, 51, 51, 0.5);
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            transition: background-color 0.5s ease, padding 0.5s ease;
+            z-index: 999;
+        }
+        nav.solid {
+            background-color: rgba(51, 51, 51, 1);
+            padding: 20px 0;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .box {
+            background-color: #555;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+
+        #dateBox, #timeBox {
+            text-align: center;
+        }
+        .fecha{
+            background-color: #191919;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        img{
+            border-radius: 10px;
+        }
+        #Hora {
+            background-color: #313131;
+            border-radius: 10px;
+        }
+        #Hora p {
+            text-align: center;
+            animation: parpadeo 1s infinite;
+        }
+        .conversation {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .message {
+            margin: 10px 0;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .message img {
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .message p {
+            margin: 0;
+        }
+        .javier {
+            color: blue;
+        }
+        .pepper {
+            color: green;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            function updateDateTime() {
+                const dateBox = document.getElementById("dateBox");
+                const timeBox = document.getElementById("timeBox");
+
+                // Obtener la fecha y hora actuales
+                const now = new Date();
+
+                // Formatear la fecha como 'día/mes/año'
+                const date = now.toLocaleDateString();
+
+                // Formatear la hora con segundos
+                const time = now.toLocaleTimeString();
+
+                // Actualizar el contenido de las cajas
+                dateBox.textContent = `Fecha: ${date}`;
+                timeBox.textContent = `Hora: ${time}`;
+            }
+
+            // Llamar a la función inmediatamente y cada segundo
+            updateDateTime();
+            setInterval(updateDateTime, 1000);
+
+            // Efecto de scroll en el nav
+            const navbar = document.getElementById("navbar");
+            window.onscroll = function() {
+                if (window.scrollY > 100) {
+                    navbar.classList.add("solid");
+                } else {
+                    navbar.classList.remove("solid");
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="box" id="dateBox"></div>
+            <div class="box" id="timeBox"></div>
+        </div>
+    </nav>
+    <h1 class="fecha">Nada Importante   12-01-24</h1>
+        <p style="display: flex; justify-content: center;">Okay, creé esto con tal de tener mis textos de mi libreta en un archivo de texto como podria ser <br>
+        esta página, y luego poder leerlo en cualquier momento, tengo miedo sobre lo que pueda llegar a pasar realmente <br>
+        no se que me depara el futuro con esto, pero creo que es una buena idea, y creo que podría ser muy útil para <br>
+        ir viendo mi historia de vida desde hoy 12-1-24 y aparte de pensamientos lo usaré para notas <br>
+        y todo ese tipo de cosas.
+        <br>
+        No soy tonto y se que en el futuro alguien leera esto, conociendome, sé que lo haré
+    </p>
+    <h3 class="fecha">¿Qué es esto?     13-01-24</h3>
+    <p>Estoy haciendo o escribiendo un libro en donde estoy escribiendo uno de los capitulos mas tranquilos y donde tengan una relacion estable ethan y Emma, ethan revelara que solo utilizó a emma para crear un romance tragico en sus historias y cuando tuviese su libro escho se iria de la forma mas culera... q feo</p>
+    <p>Ya no quiero hacer nada. Espero que esta relación que tengo con Gabriela aún siga en pie, en verdad la amo...</p>
+    <p>No quiero hacer nada, no quiero hacer nada, no quiero hacer nada, no quiero hacer nada, no quiero hacer nada, no quiero hacer nada, no quiero hacer nada, no quiero hacer nada, no quiero hacer nada, no quiero hacer nada, no quiero hacer nada, no quiero hacer nada, no quiero hacer nada</p>
+    <h3 class="fecha">Ideas     14-01-24</h3>
+    <p>Juego de simulación de streamer donde vas ganando espectadores, necesitas trabajar, comprar componentes de PC, puedes viajar, puede ser multijugador y puedes decorar tu apartamento</p>
+    <h3 class="fecha">Sigo aquí, mirame     15-01-24</h3>
+    <p>Me quiero matar. Amo a gabi, amo a mi familia pero prefiero realmente no amar, no sentir, ya sentí mucho, no me gusta. A veces necesitamos forzar el tiempo de introspección para saber que desiciones tomar y dedicarme mi tiempo</p>
+    <h3 class="fecha">Escribir en otro momento     16-01-24</h3>
+    <p><ul>
+        <li>¿Que estoy pensando en este moemnto?</li>
+        <li>¿Que hiciste ayer?</li>
+        <li>Anotar cosas de las cuales estoy agradecido</li>
+        <li>¿Que soñaste?</li>
+    </ul></p>
+    <h3 class="fecha">No existe el hubiera     18-01-24</h3> 
+    <p>Hace unos dias tuve una crisis de ansiedad tremenda, por que le dije a una amiga (amiga de mi novia) que es una linda persona, pero en el momemento me senti presionado, no lo pense y dispare lo que realmente tenia que decirle. Le hice mencion sobre una inconformidad la cual tenía yo con ella, al hacerle mencion de mi  incofnromidad la lastime a ella, y era obvio a mi parecer, solamente queria hacerselo saber, la incofnromidad que tanto hago mencoion es esto,
+        <br>
+        contexto: Ella no sabe hablar con las demas personas y no sabe hacer mas amigos y su unica amiga desde que entro a segundo de secundaria era literalemten mi novia, le hablaba a mas personas pero eran personas 'X' sin tanto valor en su vida como lo era gabriela, por que las demas personas a las cuales ella les hablaba eran personas muy doble cara y hasta las criticaba diciendoles "nacos" pero se comenzo a juntar con ellos una vez empeze a andar con gabriela, y muchas veces ella se juntaba en los recesos conmigo y con gabriela y a mi no me agradaba del todo por que no lograbamos tener una buena comunicaicon o no nos desarrollabamos bien en cuanto a la comunicacion.
+        <br>
+        como se lo dije fue algo directo y seco, frio, crudo de mi parte, y eso provoco que causara problemas, y eso, por no encontrar las palabras correctas, aveces siento que es necesario dejar de pensar tanto las cosas, por que en la vida estamos llenos de cosas en nuestra cabeza, metas, pendientes, tareas y aveces la lista se extiende de mas, que aveces nos olvidamos de pensar en nosotros mismos, siento que yo hubiera pensado primero en mí y hubiera solucionado todas mis incofnromidades o por lo menos intentar solucionar la mayoria de mis inconformidades conmigo mismo, siento que hubiera dicho las palabras correctas en momentos adecuados, es decir, tenia tantas cosas en la mente
+        <br>
+        que soy capaz de jurar que no podia pensar con claridad ninguna de esas cosas, me sentia tan abrumado que no podia pensar tan siquiera en como decir unas simples palabras. Pero como eh dicho muchas veces <strong>EL HUBIERA NO EXISTE</strong>.
+    </p>
+    <h3 class="fecha">Ideas de mi supuesto libro     18-01-24</h3>
+    <p>se me ocurrio ponerle unas cuantas caracteristicas a ethan:
+        <br> 
+        Ethan es un chico con cabello negro, alto (1.87m), color de piel color piel :u, le gusta ayudar a la gente, es escritor, en su pasado era un camarografo urbano, tiene un pasado algo no tan agradable y es alguien muy controlador, quiere utilizar a emma para su historia de romance con ella, para luego ganar dinero con eso.
+        <br>
+        Emma, chica baja (1.57m) le gust hacer postres, mas que nada pasteles, ayuda a la gente y muchas veces se distrae muy facilmente o no sabe lo que pasa a su alrededor.
+        <br>
+        Sarah, amiga de la infancia de Emma
+    </p>
+    <h3 class="fecha">Asco     20-01-24</h3>
+    <p>Le eh querido hablar a mosnerrat, amiga de gabriela pero solamente seria forzar la amistad. La vi pasar y solo vi su cara de asco, eso quedara grabado en mi cara de por vida aun que yo no lo quiera asi. La verdad esta sensacion nunca la habia tenido, nunca le habia dado asco a alguien</p>
+    <h3 class="fecha">Nuevo album de Milo     21-01-24</h3>
+    <p>hay una cancion de milo j que me gusto mucho que se llama Domingo y la imagen del algum es distinto, solo era por aparicion en live set de milo, per ahora aca, asi, la imagen de milo es de el con los brazos estirados con alas tiene muchos 1 en su cara por su album 111.</p>
+    <img src="img/DOMINGO.jpeg" alt="Domingo" width="100" height="100">
+    <h3 class="fecha">Aprender de nuevo     23-01-24</h3>
+    <p>Me gustaria entrara a la preparatoria. Queria hacer un video sobre mi miedo por ir a la preparatoria, es muy estresante y pues me da miedo no poder tener tiempo de nada y eso me inquieta, me frustra el echo de suponer o asumir que cuando entre a la preparatoria no tendre tiempo de nada, y bue, igual ya quiero salir de la escuela. <br>
+    ahora mismo son las 12:56 p.m y salgo a la 01:10 p.m y no dormi nada la noche pasada. quieo que el ultimo dia aun que sea el ultimo, pueda ver ese dia a gabriela por ultima vez y decirle lo mucho que la estimo por ultima vez saliendo de la escuela, decirle lo mucho que la amo</p>
+    <h3 class="fecha">Caos     26-01-24</h3>
+    <p>A veces simplemente suelo evitar el conflicto, lo sé por que cuando veo que se va a generar uno o se esta generando uno, callo a todos, quiero tener el mayor silencio posible solo par ano escuchar al conflicto, solo verlo, y digo verlo por que es mejor ver el caos que escucharlo, a veces ver a una persona morir no duele tanto, pero ver y oir como pide ayuda, como agoniza, escuchar sus gritos, lamentos, suplicas, simplemente son cosas que desgarran el alma
+        <br>
+        simplemente es tanto ruido que no puedes pensar en nada mas que en el conflicto y a veces se te queda en la cabbeza durante bastante tiempo, esos sonidos del conflicto... desgarran <br>
+        "construye el avion mientras lo vuelas"
+    </p>
+    <h3 class="fecha">Arte, estres y pensamientos     30-01-24</h3>
+    <p>
+        No lo sé, muchas veces tengo esta idea de que el estres es un arte desastroso, una lluvia de ideas que podemos usar a nuestro favor, para crear, para pensar un poco  en nosotros, para tranqiulizarnos en tanta turbulencia que tiene la marea, aun que, pienso que no debemos de ser ignorates de nosotros mismos y tomemos en cuenta que el estres obviamente causa molestias, tanto fisicas como mentales <br>
+        <br>
+        esto lo estoy escribiendo estando justamente en clases, y me acorde de esta nueva moda que se impone en internet sobre "romper las reglas" nos eque prendenden realmente lograr con eso, es decir, si estan ahi es por algo, no se pusieron solamente de adorno, o simplemente no quieren seguir las normas sociales cuando se te dan o cuando se te da la oportunidad de hacer algo que otras personas no se lo permiten no lo aprovechas del todo sabes?, asi hay gente <br>
+        que intenta imponer estas ideas de romper las normas, cuando realmente lo que estan haciendo es no aprovechar todas las oportunidades que se les otorga. Hablo de esto por que recorde un video y escuche a un amigo que se llama Rooney decir "Para que estudio esta materia si nisiquiera la voy a ver en mi carrera" pero yo creo que esta mal esa forma de pensar por que podemos aprender siempre y eso no esta mal, es mas, nos volvemos hasta mas cultos.
+    </p> 
+    <h3 class="fecha">Gabriela     23-02-24</h3> 
+    <p>Dios mio... hoy viernes gabriela me corto, es horrible, horrible, horrible, hoy todo el santo dia no quise ver, no tuve los lentes para nada, nisiquiera para ver el pízaaron,literalmente llevo dias hablando con ella sobre sus papas y sus inconformidades, pero ella no queria hablar conmigo, yo insistia, intentaba ayudarla de alguna manera, intente, lo intente, en serio que lo intente, le dije a mi psicologa si le podia hacer terapia aun que sea por mensajes a gabriela ella acepto y le pagaba el dinero que yo no tenaia a mi psicologa con tal de que ella se sintiera bien, a ella no le gustan los psicologos y sus padres son tan sobre protectores y tan limitantes... <br> en fin, creo que ya paso todo, tratare de estar en paz. <br>
+    fui a morelia, le compre un collar de mariposa, le compre un libro, el libro que ella tanto queria pero sus papas no le dejaban tener, le compre un POU.. dos pou tristes, le di mi confianza, le di mi corazon, lo destrozo, fue tan, cortante, tan fria, tan de repente, me hizo sufrir, ya me lo veia venir, pero por que me hizo esperar tanto tiempo la tormenta y el huracan cuando la marea me estaba sofocando? en fin, no importa ya, todo termino, espero poder seguir vivo, no quiero vivir, no quiero pensar, no quiero saber nada de nadie, no quiero nada, no quiero nada, no quero nada, no quiero nada, no quiero nada, no quiero nada, no quiero nada, no quiero nada, no quiero nada, no quiero nada, no quiero Nada, NADA, NO QUIERO SABER ABSOLUTAMENTE NADA DE NADIE NI DE PUTAS NADA ALV, MAATENME DE UNA PERRA VEZ, NO PUEDO SEGUIR AQUI, NO PUEDO SEGUIR ASI, no puedo seguir...br
+<br> <br>
+        no puedo dejar de pensar Tanto odio, tanto amor para esto, tanto tiempo, tantos sentimientos, todo esto para que al final pasara lo que yo sabía que iba a pasar. A pesar de todo, nunca le dejé de querer. Siempre la quise, siempre la querré. No me importa cuánto daño me cause el querer. Yo mismo me ahogo aferrándome a algo que quizás ya no exista. Tantas cosas, nueve veces, que no es fácil soltar todo eso. El proceso por el cual conocí a Gaby fue maravilloso. Pude conocer a alguien muy guapa, muy linda, y con una personalidad... no lo sé. Ella es única. Ella es como todo ser humano. Tiene patrones. Salía de su casa a las 6.37 y pasaba cerca de la mía a las 6.45 de la mañana. Siempre por mi misma calle. Siempre nos sentábamos en el mismo lugar. Siempre nos conocíamos un poco más. Hasta que un día nuestra rutina cambió. Sus patrones cambiaron. Su amiga ya no es más su amiga. Llega más tarde a la escuela y ya no nos sentábamos en el mismo lugar. Yo sentía que nuestra conexión no era la misma. Dejó de mandarme mensajes y... entendí. Yo pensaba que se estaba acercando el momento en el que ella me iba a dejar e intenté no creer eso con "las relaciones evolucionan". "Ella también es humana". "Quizás tiene mucha tarea". "Está ocupada". Todo este tipo de cosas para que al final mi suposición fuera verdadera. A veces me odio a mí mismo. Ella perdió y ganó a la vez. Le di muchas cartas y regalos, mucha comprensión, apoyo y hasta me puse de acuerdo con mi psicóloga para que Gaby hablara con ella. Todo para esto. De igual forma siento que la saturé de cosas ya que cuando me cortó me dijo varias cosas. Ahorita lo recopilo. También la vi comportándose de una forma muy rara. Sus patrones cambiaron por completo. Aún más. Ya casi no me quería hablar. Aún no olvidaré todo lo que me dijo. Todo el mes que se comportó raro y aparte cuando me cortó me dijo. "No quiero estar contigo". "Me causaste muchos problemas". "Eres un problema". "No es por ti. Es por mí". "No te puedo dar algo que no tengo". "Lo pensé mucho". "Estoy decidida". "No me importa lo que digas". Todo eso dijo y lo que más me dolía es que no me lo dijo desde antes. Me decía te quiero falsamente desde muchísimo antes y yo realmente la amé. De verdad la quise mucho y que me dijera esas palabras. No lo sé. Ya no quiero nada pero a la vez lo quiero todo. Estuve soñando en una almohada pero sentía frío sin su abrigo. Estaba viendo si sacaba un poema de eso pero terminé sacando otro. He estado sacando reels últimamente. Estoy haciendo poemas, recitándolos y usándolos para hacer reels y tiktoks. Estoy cansado. No he dormido nada. Me duele todo. Qué sueño.
+    </p>
+    <h3 class="fecha">DOM1NGO     01-03-24</h3>
+    <p>Qué feo es sentir un vacío que no va a llenarse Por más que uno lo intente Ojalá retrocediese el tiempo pa' poder abrazarte Y encararte de frente No eras santa ni perfecta Pero seguías siendo grande Tengo cosas pa' contarte Puertas para abrirte Pensé que eras diferente Vuelve a mí como hiciste antes No quiero mentirte Mi corazón quedó hecho en partes Y, en parte, por lo que hiciste Pero te extraño, aunque no haga bien Ni a vos, ni a mí, ni a nadie Dentro de poco,
+        te quiero ver Aunque duela Aquel día domingo Esperé a que vengas Noto que no eras para mí Esos ojos lindos Me hicieron de piedra Te extraño Aunque no te haga feliz
+        <br>
+        bueno ayayayayayayayayayay xd
+     </p>
+     <h3 class="fecha">Dibujos     01-03-24</h3>
+     <p>Realmente hace ya bastante tiempo no hago nada parecido a esto, ni a dibujos ni nada de eso y nada, solo queria pasar el rato en clase, estaba aburrido con una grandes ganas de, ya sabes, aburrirme haciendo algo, asi que hice este dibujo javier:</p>
+     <img src="img/dibujoenlaescuelaporaburrimientojajajajajajaj.png" alt="dibujo" width="250" height="300">
+     <h3 class="fecha">Frases     15-03-24</h3>
+     <p>Bueno como estoy a punto de entrar a vacaciones me eh centrado mas que nada en mi canal de youtube asi que no el eh dedicado tanto tiempo a otras cosas, me siento orgulloso de lo que eh logrado por ahora, me gustan mucho mis resultados hasta el momento y siento que puedo segir mejorando, ultimamente eh tendio mas que nada pensamientos de introspeccion y siento que puedo mejorar mi lectura leyendo mas y tambien eso me ayudaria a poder escribir muchsimo mas rapido pero tambien teniendo coherencia en lo que escribo al igual que estar bien gramaticalmente, me gusta mucho exporar este tipo de mundos sobre la redaccion de distitnas cosas y todo eso, de echo me acorde que tengo un amigo que se llama Atta, me ah llamdo para poder jugar con el ajedrez, hablando de juegos asi, recorde que a mi me gusta mucho el jugar tetris, hace poco hice un record personal dentro de el, que es colocar mas piezas sin morir en el intento. <br> <br>
+    bueno ya estuve jugando con atta un rato y la verdad es que ah mejorado bastante para todo este tiempo en el cual no se ah estado conectando y yo tampoco, me gusta como va avanzando, dejando eso de lado, eh querido hacer y escribir mas frases al igual que estar leyendo para mejorar mi manera de escritira al igual la manera en como pienso ya que creo que es una manera en la cual puedo estar un poco mas en paz con lo que ah pasado recientemente con gabriela, aun que mira javier, la verdad ya, superala, quizas la veras de vuelta en el futuro o conoceras a alguien mejor, a alguien que de verdad te valore y de verdad te quiera, ella nisiqueira te decia un maldito "te quiero" y ni aun que le suplicaras que te lo dijera, nunca te lo dijo, solamente te dio un regalo y decia algo de te quiero, pero... meh, al final no termino nada bien, encontraras a alguien mejor que ella, ella al parecer no queria nada contigo y lo sabias desde un inicio. <br>
+     Aun asi te aferraste como siempre a querer, pareces una puta pulga, hasta que no te quitan no te vaz, me das asco javier</p>
+    <h3 class="fecha">Ideas para frases     17-03-24</h3>
+    <p>
+        Aqui tengo unas cuantas ideas para algunas frases
+        <ul>
+            <li>Cada dia, soy nuevo, soy tuyo...</li>
+            <li>Todo parece claro, como si el final estuvier cerca. el humo huele a fracaso y no quiero fallar, pero todas las escaleras conducen directamente al infierno.</li>
+            <li>Me gustaria saber como estas tan perdida como marea sin luna y yo tan perdido en el mar</li>
+            <li>un "para siempre" que siempre fue para un rato, y yo soy el unico culpable de recibir ese trato</li>
+            <li>Tu eres una diosa y yo un simple chico que te adora</li>
+            <li>Gotas de lluvia caen, caen con lentitud y parpadean en el ocaso de la tarde, los viajeros caminan por el sombrio sendero con toda su alma perdida</li>
+        </ul>
+        tengo muchas frases en mente y muchos poemas, pero los voy a ir subiendo poco a poco, los escribire en otra libreta que me servira solamente para escribir mis frases y cuando termine de hacerlo, o me canse, lo escribire todo aqui, en esta pagina, en esta libreta.
+    </p>
+    <h3 class="fecha">avances en esto     10-05-24</h3>
+    <p>Eh estado avanzando bastante con mis frases y con mis poemas, me siento orgulloso al igual que eh estado motivado y avanzando con todo esto de mi canal de youtube, le mes pasado lo estuve mejorando y planificando lo de youtube, por ahora esta dando frutos y muy buenos, quiero seguir, no quiero parar, quiero seguir nadando, haciendo videos, programando, eso me hace olvidar de mis problemas, eso srecuerdos tan... aterradores, me gusta lo que hago, en serio que no se que podria hacer sin ellos</p>
+    <h3 class="fecha">las ideas no se buscan     14-05-24</h3>
+    <p>
+        a mi libro lo nombro "la naturaleza de los sueños?" o "aromas del placer?"
+        <br>
+        escuche por ahi que la idea no llega si la buscas.
+        <br>
+        Yo creo que hay 2 tipos de personas, quienes salen a cazar la idea, y quien esperan a cazar la idea. el cazador y el pescador, pero no, yo no soy niguno de ellos, creo que yo soy mas como un paseante, camino hasta ver el conjunto de ideas, camino y voy observando las cosas, mientras camino, hay mas ideas, yo no fuerzo la idea, la y dea y yo nos encontramos caminando en la ruta del aburrimiento
+        <br>
+        me llego una idea justamente y no la tuve que buscar, "me tienes jodidamente enamorado y no sabes lo emocionante y escalofriante que es eso" fuaaa el diablo 
+
+    </p>
+    <h3 class="fecha">... --- ...      15-05-24</h3>
+    <p>
+        Realmente tengo ganas de clavarme un cuchillo en el estomago y retorcerlo lentamente hasta quedarme sin vida, no quiero vivir, realmente no, quiero matarme pero, no lo se, soy muy cobarde. Yo mismo me ahogo en mis problemas,no se como desconfiar de la gente que no conozco, no se si lo estoy haciendo bien, no se si sirvo para las cosas, simplemente y siempr etengo la cara de lo que hago <strong>NO ME GUSTA</strong>, recuerdo cuando me levante para participar aquella vez en clase de quimica y desde ahi no me gusta mi cara, nisiquiera le habia prestado atencion hasta que alejandro en la clase de quimica dijo "ahi va, el cara de diarrea", no me dio risa, me molesto pero no le tome mucha importancia en ese momento, solamente se me vino a la mente una idea de lo que pude haber dicho en ese momento <br>
+        pude haberlo agarrado y sofocarlo con mis dos manos para enseguida golpearlo mientras lo seguia sofocando, diria que no lo odio pero a veces no me gusta que me dice o que le dice a las demas personas, es decir, no me molesta cuando lo hace en forma de juego cuando todos estan tomandose algo no tan en serio, pero el todo se lo toma a juego, es muy directo y dice cosas que no deberia de decir, habla de mas... ¿yo hablo de mas?. El pareciera que no tuviera conciencia de lo que dice, luego cuando yo estaba con Elena y la agarre sangoloteandola por que me emocione por algo, el paso por mi lado y le dijo "che rarita" tambien me molesto, pero no es suficiente como para darle en su madre, a veces solamente quiero decirle "mira alejandro, callate por que siempre tienes algo que decir, asi que cierra el oscico o si quieres te lo digo como el niño retrasado que eres, te mama andar cagando el palo a cada rato, che estupido"
+        y luego cuando abraze a gustavo por que su novia se habia peleado con el alejandro se le ocurrio decir "esos raritos que, se andan besando" y solo le dije "te quieres unir o que pedo" y logre lo que queria, incomodarlo, como digo, el siempre tiene algo que decir. Luego a luz elena le cuento casi todo, simplemente me hace sentir mal por que cuando no le quiero contar algo me amenaza o algo y no me gusta que haga eso, por que me obliga a contarle algo que yo no quiero contarle a nadie, quiero dibujar algo de Omori.
+    </p>
+    <h3 class="fecha">¿Amaré otra vez?     16-05-24</h3>
+    <p>
+        Cuando te vi, me gustó tu cabello, tus ojos, tu sonrisa. <br>
+        Cuando te conocí, no tuve más remedio que volverme poeta, <br>
+        porque no había forma de describirte con una sola palabra. <br>
+        No me enamoré de tu cuerpo, me enamoré de tu alma, <br>
+        del amor tan profundo que solo el arte comprende. <br>
+        Porque no hay cosa más hermosa en este mundo <br>
+        que la forma en que un ser humano desprende... serotonina, <br>
+        al descubrir una mirada, al encontrarse con un rostro <br>
+        que para los demás parece tan normal, <br>
+        pero que para mí es un arte barroco. <br>
+        <br>
+        Una charla contigo se convierte en un vals de palabras, <br>
+        y cada mínimo contacto es un terremoto <br>
+        que no destruye, pero que no esperabas. <br>
+        Crea un alboroto por dentro, <br>
+        tantos cambios que llevan a lugares desconocidos, <br>
+        a sueños guajiros. <br>
+        
+        Cuando te vi, me pareciste perfecta, <br>
+        pero cuando te conocí, descubrí que no lo eras. <br>
+        No era correcto clasificarte con barreras, <br>
+        porque eres tantas cosas, tanta bondad, tanto talento. <br>
+        Parece irreal, parece que miento, <br>
+        pero en verdad, así lo siento, <br>
+        así te siento. <br>
+    </p>
+    <h3 class="fecha">Cuchillo     17-05-24</h3>
+    <p>
+        El filo de mi cuchillo es muy fino, tengo metida la idea de que si no lo hago, no sirvo, mirando mi cuchillo me puse a pensar... <br>
+        tuve metida esta idea de que si no lo hacia no... <br>
+        me puse a reflexionar del por que vivo <br>
+        La reiteración de lo que era morir en vida llegaba a mi mente y decidí buscar, buscaba, buscaba, buscaba, buscaba, buscaba, buscaba... 8 en punto. Primero la sala. No está solo en la mesita, ni el café, tampoco encima del sillón. No estaba encima del sillón, ni los sillones individuales que flanqueaban la lámpara. 8 con 5. Busco sobre la mesa del comedor o las sillas que lo rodean. Nada. 8 con 15. En la cocina busco sobre la superficie a un lado de la estufa y sofre en la mesita donde se desayuna, come o cena cuando no hay visitas. Nada. 8 con 20. En la recámara busco encima de esta, sobre el escritorio o en alguno de los cajones o debajo. Nada. 8 con 30. En el baño busco alrededor del lavabo, sobre la taza y el piso. Nada. 8 con 45. Regreso a la sala, muevo los cojines del sillón. Largo. Dos para sentarse y dos para recargarse. Meto la mano entre los costados de los sillones individuales con un cojín para recargarse <br>
+        y el cojín del asiento cosido a los costados. Sí. Nada. 9 con 15. Busco bajo de la mesa y sillas del comedor en el camino de mesa y debajo de los flores que decoran el centro de éste. 10 con 20. Regreso a la cocina, busco donde se guardan las tazas y vasos, los platos hondos y planos y debajo del fregadero donde van las ollas. En el cajón de los cubiertos, de los tuppers, de los sartenes, dentro del refri, del horno y nada. 11 con 30. Regreso a la recámara, busco detrás de la puerta del closet, saco las playeras y suéteres, abro los cajones debajo y saco calcetines, traje de baño, ropa térmica, abro la otra puerta, corrediza, saco la ropa colgada y busco dentro de los bolsillos de los pantalones, chamarras, sacos y camisas y nada. Entonces quito la colcha, cobijas y sábanas debajo de la cama. La jalo para ver del otro lado y quito el cuchón para asegurarme de que no esté allí y no está. Debo de asegurarme que no esté debajo. <br>
+        Paso las páginas de cada libro en el librero con 62 en total con un promedio de 300 páginas en total cada uno y nada. Unas 5 de la mañana. Abro el closet de blanco, saco las cobijas, sábanas, toallas, toallitas y toallotas. Busco en los juegos de mesa y adentro de las cajas de ajedrez, Bayamón, Conecta 4. Monópoli, Turista, Club y Risk. En la parte superior del closet donde se guarda la cantidad de documentos, cuartilla de nacimiento, Curp, pasaporte, visa, certificados de primaria, cursos y metas junto con las fotos, dibujos y cartas y nada. 4.15 de la mañana. Voy al cuarto de lavado. Voy y me asomo a un lado, detrás y dentro de la lavadora, sobre el lavadero, y debajo de éste, donde se guardan rolls. Repuestos de diversos tipos de jabones, de barra en polvo y líquido para manos, platos, ropa, pisos, baños y metálexos hidrolados. Pinol, varnish, cera para los pisos, de madera y aceite para las puertas que rechinan. <br>
+        Destapo y vacío los contenedores de cada uno, con el fin de asomarme a fondo de los recipientes y nada. 6.30 de la mañana. Abro la cena y vacío las cajas, cajitas y cajotas, bolsas, bolsitas y bolsotas, de pasta, arroz, harina, azúcar, sal, nueces, almendras, arándanos, cacahuates, semillas de girasol, chía, pepitas y otros. Y otros productos de granel. Frascos, botes y botellas de vinagre, de aceite de oliva virgen y extravirgen, canela, curcuma, cala, momo, paprika, pimienta, jengibre, tumillo, clavo, anís, perijil, albahaca y otras especies deshidratadas y nada. 9.40 de la mañana. Regreso a la sala y saco el relleno y golpeo los fondos de los cojines, dos para respaldos y dos del asiento del sillón largo y los respaldos de cada sillón individual. Arranco la costura de los asientos de estos dos y más o menos los resortes expuestos con el fin de no dejar espacios sin revisar, los dejo con las patas volteando hacia el techo donde levanto la mirada y... <br>
+        ...lo encuentro.                                                                                                             
+    </p>
+    <h3 class="fecha">Caigo     18-05-24</h3>
+    <p style="text-align: center;">
+        Traté de volar demasiado cerca del sol y mis alas se derritieron, caí hasta abajo y me quemé... <br>
+        - icaro y el sol. <br>
+        Me siento hasta abajo y ahora solo me queda volver a subir
+    </p>
+    <h3 class="fecha">PENSAR     02-06-24</h3>
+    <p>
+        Para escribir tengo que instalarme en el vacio, ese vacio donde existo intuitivamente... donde extraigo sangre. <br>
+        Reciliencia <br>
+        Resignificaciona <br>
+        Tengo muchas ganas de escribir a maquina 
+        <div style="text-align: center;"> No se trata de quien es bueno en tu cara, si no de quien es leal a tus espaldas <br> -"Pedro SuGrañes Angeles"</div>
+        <br>
+        <div style="text-align: center;">
+            No importa lo que piensen de ti, las opiniones son de ellos, la realidad es tuya
+        </div>
+    </p>
+    <h3 class="fecha">Dependiente al dolor     03-06-24</h3>
+    <p> No estar bien, esta bien <br> Pense en lo que me dijo mi psicologa, que me aprendiera a expresar, que me dejara fluir, que dejara fluir mis sentimientos. me habia dicho eso. entonces me eh convertido en alguien dependiente al dolor, creo que sin el dolor no puedo tener otros sentimientos</p>
+    <h3 class="fecha">preparatorias     04-06-24</h3>
+    <p>opcion 1: preparatoria oficial numero 68 <br>
+    opcion 2: CCT 15EBH0169T</p>
+    <h3 class="fecha">otro libro     05-06-24</h3>
+    <p>
+        Quiero hacer un libro sobre hawaii part 2 <br>
+        es un re album y creo que quedaria perfecto para un libro, pero mejor en otra pagina, tambien quiero anotar coordenadas de minecraft <br>
+        coordenadas java: Aldea  -893 64 661 <br>
+        vivir es acordarse de olvidar, idea -- > sentimiento (subconciente | sueño) -- > Actuar 
+    </p>
+    <h3 class="fecha">Pierdo el tiempo     06-06-24</h3>
+    <p>
+        Basta, solo siento que pierdo el tiempo, solamente quiero saber que me pasa, sabes lo peor? que ya se que me pasa, no es falta de compromiso, solo me hago la vida muy compleja, solo es hacer las putas cosas. estoy viendo una planta de nuestra terraza, esta muriendo, mi papa hace muchos años habia plantado una rosa, ahora se murio y esta floreciendo una mas, una rosa, solo una planta mas, el cactus que toque un dia que estaba hablando con amitiel que fue hace como unos 2 años o 1, ahora se esta poniendo naranja, veo la carretera, la mesa con polvo, veo macetas sin Nada
+    </p>
+    <h3 class="fecha">Odio dibujar     07-06-24</h3>
+    <p>
+        "No me gustan los dibujos que me salen mal, apenas hago el boceto y cuando se que me va a salir mal, mejor lo dejo, las calcetas que tengo ahora mismo son muy comodas, habia sido buena idea haberle dado a gabi mi sudadera y toda esa mierda? no lo se, tengo que hacer tarea si no quiero ir peor en este trimestre"
+        eso lo anote, no se por que no lo anote aqui, es raro, xd, tiene mas texto pero se me hace raro no haberlo escrito en su momento aqui, quizas estaba demaciado oucpado pensando en la tarea de ese momento y en gabi, hay mucho texto en esa pagina sobre tareas que me dejaron
+    </p>
+    <h3 class="fecha">Bases HTML y CSS     08-06-24</h3>
+    <p>
+        DESCUBRANME SI PUEDEN JAJSJAJSJADJSHDJH
+    </p>
+    <h3 class="fecha">Todo texto     09-06-24</h3>
+    <p>Estuve esperando por siempre, tendré suficiente tiempo para pasar mi tiempo solo. Solo. Porque el amor puede arder como un cigarro en tu piel, sin dejar de nada. Pero ten presente, de acuerdo a la experiencia, que tan solo se odia lo querido. El amor que te profeso es ser más puro, mujer. Hay golpes que el destino da sin compasión. No sé qué tienen tus ojos, no sé qué tiene tu boca, que dominan tus antojos. Y mi sangre vuelve loca. Hay golpes que el destino da sin compasión. El amor que te profeso es ser más puro, mujer. Si hubiera una fuerza imparable para llevarnos de vuelta a donde estuvimos, siempre volvería a hacerte feliz. El tiempo solo es una ilusión para darle sentido a lo vivido. Solo la quiero a ella. La que promete filosofías, apologías y besos del paraíso. Sobreanalizar puede hacer que las montañas parezcan más grandes de lo que realmente son. Sé que tienes miedo, yo también tengo miedo. Pero enfrentemos el amor juntos, porque solo lo quiero sentir contigo. No te supe valorar cuando me di cuenta tuve que... Yo elijo con qué veneno envenenarme. El amor es una de las peores maldiciones. Aprendiste a amar porque fuiste amado o fuiste amado por saber amar. No te supe valorar, pero cuando me di cuenta, tuve que dejarte volar. Yo podía elegir qué espina pisar, pero Dios me hizo entender que cualquiera me puede lastimar. La única consecuencia que te puedo asegurar si agarras una rosa, es que te vas a morir. La única consecuencia que te puedo asegurar si agarras una rosa, es que... Si me amas es la única... Si me amas las únicas consecuencias que te puedo asegurar es que soy como una rosa llamativa y bella. Pero las heridas por parte de mis espinas no van en la piel, van en el corazón del mal. Si más me ames, serás quien perderá. Si me amas las únicas cosas que te diré es que mi amor es una rosa llamativa y bella. Pero mis espinas causan no dolor en la piel, sino en el corazón del alma. Yo no conozco el mundo, el mundo me conoce a mí.</p>
+    <h3 class="fecha">Mi libreta     12-07-24</h3>
+    <p>Esta libreta me ha dado un gran rato, pero está empezando a romperse de la parte trasera. Cada libreta en la que escribo, creo que voy a hacer lo mismo. Cada libreta nueva será una etapa, o mejor dicho, será un conjunto de etapas y pensamientos e ideas en un cuaderno distinto. Pienso según escribiendo hasta que me canse. Cierto, también empecé una nueva etapa en mis publicaciones de Instagram en donde... Escribo más frases que antes, pero ahora ya no las escribo en mi cuaderno, ahora son digitales. Escribí un poema que dice así. Cada vez que te metes en mi mente, no puedo parar de pensarte. Pareces una isla que por más que intente, no podré conquistarte. Pero ¿para qué conquistarte cuando puedo amarte? Habitarte. Tengo presente de que llegará el momento de abandonarte. No intento lastimarte. Créeme querida, que jamás podré olvidarte. O no solamente poemas, también pensamientos como... Cierro mis ojos y estoy dormido soñando en que aún no me he rendido. También estaba pensando en que esta libreta es como si le contara las cosas que me han pasado a mi yo del futuro. Esta parte de atrás que se rompió de mi cuaderno, quizás lo repare. El cuaderno es una parte de mí, y si lo dejara por lo menos así, sin intentar repararlo, sería como dejar una herida abierta. En cambio, si lo reparo, sería como intentar sanar lo que sea que le haya pasado. Pero aún así, aceptando que sea roto. Pero no me descuido. Aunque ahí siga la cicatriz, la herida estará sanando. No se ahogará, y si se vuelve a abrir, abrirá peor. Pero estoy dispuesto a tarde o temprano volverlo a sanar, aunque sé que me llegará a romper. Pues...</p>
+    <h3 class="fecha">La luna...     18-07-24</h3>
+    <p>No me siento acurrucado por la luna por más que quiera. Ella no lo intenta. El tiempo me sofoca. Solamente quiero que me ahogue en la eternidad. Estoy desesperadamente buscando la serenidad. Ya no deseo la superioridad. Sin ella no hay más que un poema frío lleno de tristeza y desesperanza. Una persona desea, pero una persona anhela. Mi corazón no sé por qué no se acaba de mermar. Mi ocaso se fue y comienza a llover. Camino por la calle desorientado a la esquina a mitad del otro lado. No importa nada. Todo está nublado.</p>
+    <h3 class="fecha">Lista corta     01-08-24</h3>
+    <p>
+        <h2>Cómo hacer mods en Psyche Engine con código?</h2>
+        <ol>
+            <li>Compilación del 0.7.1H: Configurar todo lo necesario para compilar desde GitHub.</li>
+            <li>Comprender los archivos: Identificar los archivos esenciales del engine.</li>
+            <li>Modificar el menú: Cambiar secciones como Story Mode, Freeplay, Mods, Credits.</li>
+            <li>Modificar el playstate: Ajustar las funciones del estado de juego.
+            </li>
+            <li>Crear personajes: Diseñar y agregar nuevos personajes al juego.
+            </li>
+            <li>Crear música: Integrar nuevas canciones y sincronizarlas con el gameplay.
+            </li>
+            <li>Crear backgrounds: Desarrollar fondos personalizados.
+            </li>
+            <li>Crear charteo: Diseñar el chart de las canciones, cambios de personajes, y eventos.
+            </li>
+            <li>Crear eventos o scripts: Implementar nuevos eventos o scripts en las canciones.
+            </li>
+            <li>Modificar configuraciones: Cambiar configuraciones del juego y perfiles de usuario.
+            </li>
+        </ol>
+    </p>
+    <h3 class="fecha">Cumpleaños     13-08-24</h3>
+    <p>No me suelen gustar los cumpleaños y menos si son mios, pero mis subscriptores y etc me trataron bastante bien, no lo negare, y me gusto al igual que pepper lo hizo, me canto las mañanitas :D
+        <br>
+        <video controls playsinline width="50%">
+            <source src="video/peppercumbri.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+        </video>        
+        <img src="img/cum1.png" alt="" style="width: 50%">
+        <img src="img/cum2.png" alt="" style="width: 50%">
+        <img src="img/cum3.png" alt="" style="width: 50%">
+        <img src="img/cum4.png" alt="" style="width: 50%">
+        <img src="img/cum5.png" alt="" style="width: 50%">
+        <img src="img/cum6.png" alt="" style="width: 50%">
+        <img src="img/cum7.png" alt="" style="width: 50%">
+        <img src="img/cum8.png" alt="" style="width: 50%">
+        <img src="img/cum9.png" alt="" style="width: 50%">
+    </p>
+        <h3 class="fecha">El mundo es inmenso como nosotros    15-08-24</h3>
+    <p>Con pepper me puse a reflexionar sobre esto y la verdad disfruto mucho hablar con el, conversamos sobre esto: <br>
+        <div class="conversation">
+            <div class="message">
+                <img src="img/BritexPFP.jpg" alt="Javier">
+                <p class="javier"><strong>Javier:</strong> me puse a pensar y no c pq pero me vino a la cabeza "el mundo es tan grande pero nuestra capacidad de estar a su altura lo es mas"</p>
+            </div>
+            <div class="message">
+                <img src="img/pepperPFP.webp" alt="Pepper">
+                <p class="pepper"><strong>Pepper:</strong> las opciones son ilimitadas
+                    pero pienso que somos el mundo
+                    no somos seres separados de él
+                    entonces nuestra vida también es una forma más del mundo para expresarse a sí mismo</p>
+            </div>
+            <div class="message">
+                <img src="img/BritexPFP.jpg" alt="Javier">
+                <p class="javier"><strong>Javier:</strong> Me recordo a esta metafora donde dicen que somos taxistas manejadno el auto del todo en la carretera de la nada</p>
+            </div>
+            <div class="message">
+                <img src="img/pepperPFP.webp" alt="Pepper">
+                <p class="pepper"><strong>Pepper:</strong> es un buen ejemplo, pero, no pienso que estemos conduciendo
+                    pienso que simplemente somos pasajeros</p>
+            </div>
+            <div class="message">
+                <img src="img/BritexPFP.jpg" alt="Javier">
+                <p class="javier"><strong>Javier:</strong> por que piensas eso?</p>
+            </div>
+            <div class="message">
+                <img src="img/pepperPFP.webp" alt="Pepper">
+                <p class="pepper"><strong>Pepper:</strong> porque no tenemos control de nada
+                    no controlamos ni cuándo llegamos ni cuándo nos iremos</p>
+            </div>
+            <div class="message">
+                <img src="img/BritexPFP.jpg" alt="Javier">
+                <p class="javier"><strong>Javier:</strong> claro, eso me recordo a algo como "no soy nada y quiero ser todo"
+                    uhhh
+                    el ying y el yang</p>
+            </div>
+            <div class="message">
+                <img src="img/pepperPFP.webp" alt="Pepper">
+                <p class="pepper"><strong>Pepper:</strong>C laro es como una ilusión de poder
+                    De control
+                    cuando ni siquiera sabemos si tenemos libre albedrío o no
+                    Es un debate filosófico que parece no tener fin a día de hoy
+                    me gusta verlo como un taxi en el cual despertaste
+                    piensa en las fechas que vienen antes del 2009
+                    Cuando te dicen 2001, 1990, 1500
+                    300 a.c
+                    Pues te lo imaginas más o menos</p>
+            </div>
+            <div class="message">
+                <img src="img/BritexPFP.jpg" alt="Javier">
+                <p class="javier"><strong>Javier:</strong> real, a veces queremos todo el tiempo del mundo para probar un poco de todo pero no sabemos que hacer nisiquiera en un dia de lluvia, si</p>
+            </div>
+            <div class="message">
+                <img src="img/pepperPFP.webp" alt="Pepper">
+                <p class="pepper"><strong>Pepper:</strong> en base a estimación. Pero
+                    Realmente no comprendes nada de lo que pasó antes de tu nacimiento
+                    Porque no estuviste allí
+                    De un momento a otro ya tenías consciencia y ojos, y sentidos
+                    Y de un momento a otro ya no lo tendrás
+                    Pero el taxista te dice que a pesar de eso, disfrutes el viaje igualmente</p>
+            </div>
+            <div class="message">
+                <img src="img/BritexPFP.jpg" alt="Javier">
+                <p class="javier"><strong>Javier:</strong> un lienzo en blanco que se fue pintando lentamente al paso del tiempo, se fue formando, pero de un dia a otro no esta el lienzo
+                    mejor dicho
+                    el artista hizo arte en un lienzo en balnco, un dia, el artista no esta, nosotros somos el artista
+                    nosotros decidimos que dejar.
+                    creo que igual depende
+                    yo veria al taxista como nuestra mente. nosotros decidimos el destino pero no lo manejamos</p>
+            </div>
+            <div class="message">
+                <img src="img/pepperPFP.webp" alt="Pepper">
+                <p class="pepper"><strong>Pepper:</strong>yo pienso que los sentidos son las ventanas
+                    y que el taxista también es parte de nuestros sentidos
+                    el carro lo es
+                    es todo una forma de percibir la realidad
+                    el viaje está personalizado por nuestros sentidos
+                    es como cuando te dicen que un ciego verá negro
+                    No es así
+                    simplemente no ve
+                    los 5 sentidos sólo son nuestra forma de ver las cosas</p>
+            </div>
+            <div class="message">
+                <img src="img/BritexPFP.jpg" alt="Javier">
+                <p class="javier"><strong>Javier:</strong> quiero ser ciego
+                    y decirte que ve un ciego</p>
+            </div>
+            <div class="message">
+                <img src="img/pepperPFP.webp" alt="Pepper">
+                <p class="pepper"><strong>Pepper:</strong> quizá existan seres en algún lado del universo con seis sentidos
+                    o diez
+                    O más</p>
+            </div>
+            <div class="message">
+                <img src="img/BritexPFP.jpg" alt="Javier">
+                <p class="javier"><strong>Javier:</strong>como esta teoria de que existe la 4ta dimensión y que hay seres de la 4ta dimension que pueden vernos, pero nosotros no por que somos de la tercer dimensión </p>
+            </div>
+            <div class="message">
+                <img src="img/pepperPFP.webp" alt="Pepper">
+                <p class="pepper"><strong>Pepper:</strong>Sí, es parecido
+                    por eso mencioné lo del taxi
+                    porque me parece un ejemplo allegado a nosotros
+                    Sabemos lo que es un carro, un viaje, una calle y un paisaje
+                    Pero la vida no necesariamente tienen que ser esas cosas</p>
+            </div>
+            <div class="message">
+                <img src="img/BritexPFP.jpg" alt="Javier">
+                <p class="javier"><strong>Javier:</strong> y la carretera de la nada?</p>
+            </div>
+            <div class="message">
+                <img src="img/pepperPFP.webp" alt="Pepper">
+                <p class="pepper"><strong>Pepper:</strong> Sólo es nuestro lente para verla, como especie</p>
+            </div>
+            <div class="message">
+                <img src="img/BritexPFP.jpg" alt="Javier">
+                <p class="javier"><strong>Javier:</strong>uhh
+                    entiendo
+                    creo que la carretera de la nada se podria iterpretar mas bien como, como
+                    no se
+                    incertidumbre
+                    ¿?</p>
+            </div>
+            <div class="message">
+                <img src="img/pepperPFP.webp" alt="Pepper">
+                <p class="pepper"><strong>Pepper:</strong> sí , mas las ventanas están al lado 
+                    creemos que somos reyes de las praderas, de las montañas y glaciares
+                    sólo con verlas
+                    pero sólo podremos hacer eso
+                    verlas un rato
+                    porque estamos de visita
+                    No podremos convivir con el final del mundo ni con el principio
+                    Las montañas, los animales, las especies, son todas estructuras que llevan estando aquí antes de ti y lo estarán cuando te vayas
+                    entonces sentirte dueño de algo es bastante absurdo la verdad
+                    Y diría que sentirse dueño de la verdad es igual de absurdo</p>
+            </div>
+            <div class="message">
+                <img src="img/BritexPFP.jpg" alt="Javier">
+                <p class="javier"><strong>Javier:</strong> pero al crear algo podemos tener un legado en algo que no es de nosotros, pero podemos poner un grano de arena en algo mas grande, o simplemente servir como un engranaje para una maquina en constante funcionamiento, pero funcionar tambien a nuestra manera, no solamente someternos y creer que estamos haciendo algo para que funcione algo, no, si no, hacer algo para que funcione lo que nos gustaria que funcione e intentar hacer un cambio, tomar la iniciativa o simplemente seguir algo que nosotros creemos correcto
+                    o insertivar
+                    insentivar*</p>
+            </div>
+            <div class="message">
+                <img src="img/pepperPFP.webp" alt="Pepper">
+                <p class="pepper"><strong>Pepper:</strong>El problema es que creemos en el concepto de la palabra "avanzar"
+                    ¿qué es "mejorar"?
+                    ¿qué es "algo más grande"?
+                    Es como si trascender nuestra muerte fuera lo único que nos importara
+                    Pero verdad es que aquél que nos recuerde cuando muramos, también morirá
+                    Llegará el día en que nadie recuerde las guerras mundiales, en que nadie recuerde a los máximos pensadores griegos, a los más grandes imperios orientales o a cleopatra
+                    Sólo porque no quedará nadie para recordarlo
+                    Aunque no apuesto todo a ello
+                    No lo sé
+                    Quizá alcanzamos la inmortalidad un día
+                    Pero incluso de ser inmortales, las estrellas se apagarán un día y la energía como la conocemos no existirá
+                    Los humanos tienen que ponerse muy ingeniosos de aquí a unos miles de millones de años si es que siguen existiendo
+                    Generar su propia energía
+                    Eso es muy dificil</p>
+            </div>
+            
+            <div class="message">
+                <img src="img/BritexPFP.jpg" alt="Javier">
+                <p class="javier"><strong>Javier:</strong> cierto, lo unico que podemos hacer es simplemente disfrutar el presente como ahora mismo nos lo exige la sociedad, leyes, moralidad, etica, y todo eso, por que tienes raozn, quizas en un futuro no nos recuerden por el simple de echo de que llegara el punto en el que no existira la humanidad, ya sea malo o bueno lo que hemos echo, simplemente no importa que tan "bueno" o que cosa que haya echo "mejorar" al mundo sea, por que el mundo sea como sea terminara, entonces, sera mejor disfrutar el presente y tener una perspectiva propia sobre cada una de las cosas obviamente sin perderse de lo ya establecido
+                    no?</p>
+            </div>
+            <div class="message">
+                <img src="img/pepperPFP.webp" alt="Pepper">
+                <p class="pepper"><strong>Pepper:</strong> A eso me refiero
+                    Nietszche escribía filosofía increible, y, con la mejor intención del mundo!, pero un par de décadas después de su muerte, hitler fortificó sus ideologías nazis con base a sus escritos, malinterpretándolos y dándoles un uso que deshonrarían al propio nietszche si estuviera con vida
+                    Al final ni él pudo controlar lo que hicieron con él después de su muerte
+                    Lo tergiversaron, malversaron sus ideologías, y las usaron como escudo para justificar tantas atrocidades
+                    No somos quienes para controlar lo que pasó antes de nuestra llegada
+                    (y no estoy seguro, pero, lo más probable) es que tampoco seamos quienes para manipular lo que pase después de nuestra muerte
+                    Quizá debamos dejar ir y ya
+                    No lo sé</p>
+            </div>
+            <div class="message">
+                <img src="img/BritexPFP.jpg" alt="Javier">
+                <p class="javier"><strong>Javier:</strong> tienes razon, simplemente vivir, y ver el paisaje, las montañas, todo lo que ya existe, ya que por mas que queramos no podemos modificar eso
+                    en cuanto a lo que nosotros hacemos aqui es, el simple echo de vivir, nuestra principal razon para vivir es vivir
+                    si lo pensamos mucho terminaremos contradiciendo muchos puntos
+                    es un tema algo complejo a mi parecer
+                    por que ahora que lo pense
+                    seria como decir "vivimos para morir"
+                    entonces no habia sentido para vivir</p>
+            </div>
+            <div class="message">
+                <img src="img/pepperPFP.webp" alt="Pepper">
+                <p class="pepper"><strong>Pepper:</strong>de eso se trata
+                    aprender es contradecirse una y otra vez a uno mismo
+                    es tortuoso pero es divertido
+                    incluso esto que estamos hablando
+                    quizá mañana cambiamos radicalmente de opinión</p>
+        </div>
+        <div class="message">
+            <img src="img/BritexPFP.jpg" alt="Javier">
+            <p class="javier"><strong>Javier:</strong> Sería interesante escuchar alguna razón por la cual vivimos y que esa razón no tenga ningún tipo de contradicción.</p>
+        </div>
+        <div class="message">
+            <img src="img/pepperPFP.webp" alt="Pepper">
+            <p class="pepper"><strong>Pepper:</strong> El mundo, aunque grande, es solo una parte de nosotros, y nosotros, aunque pequeños, somos parte del mundo.</p>
+        </div>
+    </p>
+    </div>
+    <h2 class="fecha" style=" text-align: center; text-decoration: overline; text-decoration: underline; color: aqua; background-color: rgb(178, 6, 60);">Nueva libreta    17-08-24</h2>
+    <p>Ok, hace días ya no escribí en esto. Dentro de nada voy a entrar a la preparatoria. Y me compré una libreta nueva. La que tengo ahora no me sirve, la voy a usar solamente para anotaciones sobre tareas. Estoy escribiendo esto desde la página, desde mi código. Toda esta parte que no se ve en el navegador, estoy escribiéndolo. Lo veo y me pone a pensar. He dejado una etapa atrás. Esa libreta la guardaré. Sin mi pasado, no puedo saber quién voy a ser en un futuro. Me he comprado una nueva libreta. Me he conseguido una nueva etapa. Y sé que todo irá mejor porque se aplicó todo lo que he conocido, todo lo que he aprendido durante todo este tiempo. Todo lo que tengo plasmado, todo ese pensamiento de esa libreta, si lo aplico ahora en esta nueva etapa a la cual voy a cruzar en mi vida. Si lo plasmo, si mi pensamiento lo plasmo, puedo mejorar como persona. Y eso me agrada. Me gusta esa forma de pensar. En mi nueva libreta escribí un pensamiento sobre mi ex novia. Dice:
+        <br>
+        <br>
+        me endulzaste los oídos,
+        me arrancaste las venas, 
+        conociste mis demonios y te alejaste en silencio,
+        perversa. 
+        Si no ibas a quedarte,
+        ¿por qué me desnudaste el alma?
+    </p>
+    <h3 class="fecha">Preparatoria     19-08-24</h3>
+    <p>Hoy en la mañana, estuve pensando. ¿Qué es lo que haré en la preparatoria? ¿Qué temas nuevos conoceré? ¿Qué personas conoceré? Hoy en la mañana, conocí a alguien. Bueno, no conocí a alguien, sino que la vi. Estaba viéndome alrededor cuando nos estaban asignando nuestros grupos cuando llegamos a la preparatoria. Y cuando me terminaron de asignar mi grupo... Bueno, antes de eso yo estaba muy nervioso. Cuando nos asignaron nuestros grupos, vi a una chica a la cual me llamaba la atención desde que llegamos, literalmente. Solamente la vi entrar, y fue tipo, ojalá me toque con ella. Y adivina qué, querido diario, o lo que sea que sea esta cosa, me tocó con ella. Me sentí raro. Dije, no se lo han equivocado, ojalá no, ojalá se quede aquí. Es muy guapa. Bueno, nos pasaron a nuestros salones, y solo vi cuando entró ella a un salón del primero 2 y dije, ah bueno, está bien. Pues ella va en ese salón, ¿no? Y ya después se metió de vuelta al salón del primero 1, porque ese salón me designaron a mí. Y solamente vi cómo se sentó. Y la vi sonriendo. Tiene una sonrisa muy linda. Y me llamó la atención también por su sudadera. Su sudadera de anime. Dije, ok, bueno, pues ya podemos tener un tema en común. Y me interesó. Me llamó la atención. Dije, qué curioso. Me senté al lado de ella, con tal de poderle hablar, pero me dio mucha pena, tan siquiera hablarle. No sabía cuál podría ser su reacción. Después nos cambiaron de lugar. Y ya. No le pude hablar. Se quedó casi hasta enfrente. Y ya. Y ya me quedé hasta atrás. Y conocí a más personas. Conocí a Cris, Fátima y Miguel. A Miguel le gusta a Kino, como a mí me gusta aquino. Aquino, así. Y Cris es alguien muy amable y muy social. Y Fátima es amiga de Cris. Y ya. Eso es todo lo que paso hoy. Conocí a más personas. Y los maestros, pues ya sabes. Las materias siempre. Los maestros lo que hacen cuando vas llegando a una escuela. Lo mismo de siempre.</p>
+    <h3 class="fecha">Karina?     20-08-24</h3>
+    <p>Le dije a Chris que me gustaba Karina. Chris en realidad se llama Ashley. Y le dije sobre mi interés sobre Karina. Me animé a hablarle. La tipa se llama Karina. Y es muy buena gente. Casi no habla. Me interesa qué puedo conocer de ella. ¿Quién es ella? ¿Quién será? ¿Quién será? Me gusta cómo se ve. Me gusta cómo viste. Me gustan sus gustos.</p>
+    <h3 class="fecha">Karina     03-09-24</h3>
+    <p>He conocido a Sakarina como persona. Hemos hablado por teléfono, hemos tenido nuestras conversaciones, y al parecer también le intereso. Hemos hecho llamadas, han sido muy divertidas por la noche, y me gusta, me gusta, en serio que me gusta. Hicimos una llamada hace poco y se sincero mucho, se estaba quedando muy dormida, y simplemente es algo tan genial y fantástico conocer a alguien nuevo. Es decir, me gusta, me gusta, no se como explicarlo, pero no lo se, simplemente me gusta. Descubrí más de ella, y no se si sea buena idea ya declarármela. La conocí hace como una semana, imagínate. Bueno, supe de su existencia hace como una semana, o dos, o no se, pero me tiene loco, me tiene... me trae todo pendejo. Yo quería concentrarme en mis estudios, y mi mamá me decía, no quiero que tengas novia, porque es un distractor, concéntrate mejor en la escuela. Pero es inevitable que teniendo a ella presente, a Karina, Karina Itzel, es un bonito nombre. También tiene lentes. Ahora que lo recuerdo, hoy me tomó una foto a escondidas, te la mostraré.</p>
+    <img src="img/karinaSecret.jpeg" alt="Karina" width="50%" style="display: flex; justify-content: center;">
+    <h3 class="fecha">ME ENCANTA     10-09-24</h3>
+    <p>Lo siento. El día de ayer me le declaré. No, no pude. Fue mucha emoción. Y aparte de la emoción, ya se veía muy preocupada. En sus notas ponía cosas como... Es lovebombing. Y afirmaba a cada rato que era lovebombing. Y era en sus notas en Instagram. Y yo estaba hablando de mí. Y ella era muy distante. Es decir, yo la abrazaba todos los días. Pero un día la noté muy distante. Y dije, ¿qué pasa? No me decía nada. No me decía nada. Es más, hablábamos por cartitas. Y me le declaré en una de esas... Cartitas, porque... Te lo contaré en orden cronológico. Me desperté, me fui a la preparatoria, todo normal. Y ese día, en sus notas, lo primero que vi fue que era lovebombing. Yo ya sabía que era lovebombing, pero me hice... Tonto. Muy pendejo. Y le mandé un mensaje contestándole la nota diciendo que era lovebombing. Y ella me explicó, ¿no? Estábamos en clase de Cultura Digital, si no mal recuerdo. Sí, Cultura Digital. Cuando me contestó. No, saliendo de la clase de Cultura Digital fue que me contestó que era lovebombing. Solamente me envió una captura de la definición del doble. Y yo dije, ah, bueno. Aún así yo ya lo sabía. Y después cambió la nota más tarde a algo que afirmaba ella. Que era lovebombing. Antes era como pregunta, ahora lo afirmaba. Y dije, de seguro está pensando que yo le estoy haciendo lovebombing. Que yo le estoy haciendo lovebombing. Y nada que ver, realmente. Yo la amo. Y eso que todavía no somos nada, o sea... Oh, qué rara es, pero me gusta mucho. Y ya. Y... Y solamente empezamos a hablar por cartitas en donde inició una conversación. Dijeron los orientadores que nos iban a cambiar de lugar. Ella se sentaba enfrente de mí, yo me sentaba atrás de ella. Y no me quería separar de ella en absoluto, para nada. Quería estar con ella. Quiero estar con ella. Atrás de ella. Para, pues, platicar y hacer ahí cosas, ¿no? Pero... Bueno, hablamos por cartitas donde decían esto. Pim, pam, pum. Y ya. Y en una de esas cartas... Arrancó una hoja de mi cuadernito y se la entregué. Donde me declaraba hacia ella. Le decía que me gustaba. Pero se la di, enseguida nos cambiaron de lugar. Le dije, oye Cali, toma. Y la carta simplemente era una declaración donde le decía que me gustaba. Y a la salida, ella me dijo también. Tú también me gustas. Y fue lo más emocionante. Fue algo épico. Simplemente no olvidaré ese día. Es hermosa. Ella es hermosa. Me encanta.</p>
+    <h3 class="fecha">Pareja     1-10-24</h3>
+    <p>Y ya dejé de escribir en mi libreta. Me gusta escribir. Pero no sé por qué dejé de escribir en la libreta. Ya pasó un tiempo. Uno de octubre ya. Somos novios. Ya vamos a cumplir un mes. El 9 de septiembre me le declaré. Ya es uno de octubre. Ya. Ya un mes. Y ya dejé de escribir en mi libreta. Me gusta escribir. Pero no sé por qué dejé de escribir en la libreta. Ya pasó un tiempo. Uno de octubre ya. Me le declaré. Ya es uno de octubre. Ya. Ya un mes. Ya casi un mes. Qué emocionante. Qué rápido pasa el tiempo. Qué... Qué miedo a veces da el tiempo porque pasa demasiado rápido. Espero poder durar con ella bastante tiempo. Mucho tiempo. Demasiado tiempo. La quiero a ella. La amo a ella. Hemos vivido varias experiencias como por ejemplo... Me ha dado regalos. Le he dado muchos dibujos. No tengo fotos de ellos. Pero sí tengo fotos de sus regalos. Y también me ha dado galletitas. En los recesos. Y es tipo wow. Cuando me estoy moviendo de hambre me sirve mucho. Aunque muy me da pena recibirle la comida así de la nada. A Connie me gusta. Me gusta cómo actúa. Me gusta sus ojos. Sus lentes. Cómo se maquilla. Me gustaría conocerla sin maquillaje. Es hermosa ella. Es buenísima. Me encanta. Me manda fotos de ella. Y vídeos de ella y sus amigas y etcétera. Sus familiares. Me encanta eso. Que me mande fotos así. Con mucha confianza. ¿Qué más se puede decir? Lo siento. Ya hace mucho no tomo este hábito de vuelta. De escribir. En fin. A Karina yo la aprecio mucho. No quiero que se olvide de mi vida. Tengo un miedo intenso. Y pareciera una obsesión pero en serio. La miedo que se separa de mí. Si se puede la quiero tener toda mi vida. Ya le he contado mis planes al futuro. Mis planes. Yo quiero ser un buen padre. Ese padre que yo no tuve. Lo quiero ser yo. No quiero ser un padre que permita a todos sus hijos. Pero quiero ser un padre que les enseñe a sus hijos. Cómo poner límites. Cómo darse a respetar. Cómo respetar. Le he contado todo ese tipo de cosas. Pero yo quiero ser un padre que les enseñe a sus hijos. Cómo poner límites. Cómo darse a respetar. Cómo respetar. Le he contado todo ese tipo de cosas. A Karina. En serio. Tiene unos ojos muy bonitos. Una boca. Unos labios. Hermosos. Sus orejitas. Su pancita. Sus manitas. Sus lentes. Su cara. Cuello. Cabello. Todo. Sus piernas. Absolutamente como me encanta de ella. No puedo parar de pensar en ella. Simplemente la amo. No creo que haga falta darle mil significados a la palabra te amo. Porque esa palabra ya los abarca. Y es más. No solamente la amo. Creo que es algo trascendental. No se queda solamente en un simple te amo. Aunque tiene muchas inseguridades por su pasado. Yo aún la quiero. Espero poderla quitar esas inseguridades. Quiero ser ese hombre el cual no la haga llorar. Si la hago llorar, que sea por algo bueno, por favor. No quiero volver a ver la cara de alguien llorando por mi culpa. O alguien diciéndome que le doy asco por algo que no le gustó de mí. Quiero verla bien. Aunque no siempre se pueda. Y en sus momentos malos quiero llorar con ella. Quiero estar para ella. Quiero estar con ella. Quiero estar con ella. Y en sus momentos malos quiero llorar con ella. Quiero estar para ella. Quiero estar con ella.</p>
+    <h3 class="fecha">¿Me quieres por quien soy?     <div>13-10-24</div></h3>
+    <p>
+        El día de ayer, Karina me puso una pregunta. Me planteó algo. Me hizo preguntas, me cuestionó. No de la manera mala, sino de la manera buena, sino para conocerme más. Es interesante, le he dicho que la mente de las personas, porque así lo veo yo, son magníficas. Grandes. Galaxias. Planetas. Pero... Pero estos últimos días yo me he estado sintiendo mal. Terriblemente mal. No me siento suficiente para mi novia. No me siento suficiente para mí. No quiero seguir haciendo videos para YouTube. Ya no los hago. Ya no ido a nadar. Ya no programo. Solamente programo y sigo programando para este documento, toda esta página que he estado haciendo durante todo este año. Quiero simplemente... dejar de existir. Dejar de estar aquí. Pero no se puede eso. Quiero terminar alguna vez con todo esto. En fin. Ese no es el punto. Ese no es el tema. Karina también ha estado pasando unos días malos. Y totalmente la entiendo. Sabes, somos personas. Cambiamos constantemente. Karina me planteó una pregunta. La cual es causante de sus pequeñas, grandes ansiedades. Ataques de ansiedad. Me ha dicho. Me ha preguntado. ¿Quieres a las personas porque realmente las quieres? ¿Quieres a las personas porque realmente las quieres? ¿O las quieres porque quieres conocer más su forma de pensar? Y me puso a pensar un buen rato. Es decir. Mi forma de pensar sobre eso. Llegar a la conclusión. Mi forma de pensar sobre eso es. No voy a querer a nadie. Si no quiero saber su forma de pensar. Pero tampoco me interesa la forma de pensar de alguien que no quiero. Entonces ahí es como un duelo. Por así decirlo. Si los divides. Porque una cosa no es nada si no se complementa de la otra. Entonces es como algo interno que podría llegar a detener yo. Ella me gusta. A ella yo la quiero. Me interesa tanto su forma de pensar. Tanto su forma de querer. Tanto todo lo que ella tiene. Sus características. Para esto tenemos que subdividirlo en muchas partes. Y tener una idea. Y tener una idea. Y tener una idea. Y tener una idea. Para esto tenemos que subdividirlo en muchas partes. Y tenemos que. Que tomar en cuenta muchos aspectos porque si lo dejamos solamente. Querer. Y saber la forma de pensar de alguien. Se queda en el aire. Es muy general. Entonces tendríamos que ser más específicos en ese aspecto con todo eso. Eso es lo que yo le dije. Y Karina solamente estuvo escuchándome. Realmente. Le dije que si no me interesara su forma de pensar no la querría. Una cosa lleva de la mano a la otra. Si solamente la quisiera ni siquiera le preguntaría como es que piensa. O ni siquiera me interesaría la forma en la que ella piensa. Sus sentimientos me importarían solamente. Sus sentimientos hacia mí. Sus sentimientos. Solamente eso me interesaría. También como se ve. Y ya. Es todo. Más sin embargo yo quiero conocerla más. Pero si solamente quisiera conocerla más no la estaría queriendo. Yo quiero conocer más de su pasado. Su forma de pensar. Cómo es que se formó hasta ahora. Me interesa saber de ella. Y me interesa porque la quiero. No puedo querer a alguien si no me interesa su forma de pensar. Y no me puede interesar la forma de pensar de alguien si no quiero a ese alguien. No podemos admirar a las personas solamente por ser ellos. Sino que hay algo detrás. Queremos saber de su pasado. Queremos saber cómo están ahí. O las miramos a las personas por cómo llegaron hasta ahí. Las queremos. Ya sea por... Bueno, esto ya se divide en muchas partes de cómo sea nuestra manera de pensar. O hasta cómo queremos a las personas. Ya sea en el ámbito familiar, en amigos, pareja, siendo fan de otra persona. Y le puse esa idea. Me hizo pensar mucho. Pero yo deduje que eso me lo preguntó. Porque no sabe si confiar en mí. Para contar algo más íntimo. Y al final estuve en lo correcto. Creo que dije las palabras correctas. Porque antes de colgarme, me dijo... Entonces, si yo... Entonces yo puedo confiar en ti. Te puedo tener esa confianza para que si en algún momento me siento mal, te puedo llamar. Creo que ahora tengo una gran responsabilidad. Tengo una confianza con ella. Y ella me tiene una gran confianza. Yo desde siempre le he tenido una gran confianza. Le he contado mis problemas y todo ese tipo de cosas. Pero yo no sentía lo mismo. Y intenté tener esa confianza de ella en ese aspecto. Yo la quiero a ella. Y no la quiero dañar. En serio que no.
+        <br>
+        tengo miedo de compartir esta pagina con ella, no se lo eh compartido a nadie, tengo miedo de lo que pueda pasar, que podra pasar? tengo miedo, en fin. la vida es una y la vida se vive muajajajaja.
+    </p>
+    <h3 class="fecha">Por que yo no? 14/10/24</h3>
+    <p> 
+        <div id="Hora"><p>Hora: 12:50 A.m</p></div>
+        Hay 2 formas de ver esto. Como una queja o como una manera de insentivarnos a seguir adelante con nuestras metas, podemos ver a las otras personas cumplir sus metas a base de tropiesos y ver como poco a poco van aprendiendo de ello y podemos quejarnos diciendo ¿Por qué yo no? y no hacer nad ao tambien podemos decir lo mismo pero con tal de avanzar, progresar como mejores personas, volvernos trascendentales o trascender en este tipo de cosas, quiero progresar. <br>
+        Yo lo veo de las 2 formas, yo creo que todos lo podemos ver de las 2 formas, ya que podemos ver un problema o meta que alguien supero pero qu enos creemos capacers de tambien poder superar ese obstaculo o a veces tenemos tanto miedo de fallar y vemos el obstaculo tan grande y vemos a los demas cumplir sus metas tan bien, con los mismos obstaculos y simplemente podemos decir "¿Por que yo no?" quiero modificar un poco el formato en el cual hago estas acotaciones, poner mis pensamientos y poner la hora en la cual la estoy escribiendo aparte de eso y tambien seria buena idea poner un par con un reloj con fecha y hara con un position fix y un indexZ de 999, creo que lo hare.
+    </p>
+    <p>
+        <div id="Hora"><p style="color: red;">11:20 P.m | Rabia.</p></div>
+        A veces siento que no deberia y no esta correcto que yo siga existiendo en este plano terrenal en el cual estamos viviendo actualmente, estuve pensando en los cuchillos de vuelta, en como podria matarme, cuando filo necesita un cuchillo para cortarme apenas me rozara la piel, que tipo de cuchillo necesito para cortarme, estuve pensnado en que quizas mi inexistencia ayudaria muchisimo a muchas personas, solamente soy un cerebro, un cerebro con una armadura de carne y hueso, pienso y actuo a traves de el, distintos mecanismos, formas de expresar, estructuras dentro del mismo, miles como yo, pero tan distintos... odio esto completamente, recorde la imagen de sayori donde se cuelga del techo, recorde esa imagen y recorde la musica de fondo que la acompañaba, recorde que no era lindo seguir vivo y ver a los demas morir, no quiero ser inmortal, prefiero ser mortal y morir mas temprano que tarde, aun que no haya concluido con mi labor dentro de este mundo, necesito morir, quiero morir, anhelo el acabar con una puta vez de esto, simplemente no puedo, esto me hace pensar que quizas yo soy muy egoista y no me importa lo que sientan los demas despues de mi partida, pero realmente ya no tendre por que preocuparme, total ya estare muerto, solamente me importa kari a estas alturas... esto me recuerda a algo... 
+        <div id="Hora"><p>11:34 P.m  <br> Prodromico.</p></div>
+        Solamente tenemos que escoger y darle a una persona el poder para que esa persona haga algo extremadamente ESTUPIDO. Un plan llamado el plan de las 4 plagas fue una idea propuesta por un presidente de china el cual proponia extermiar las plagas del pais, plagas de animales "poco deseables" y mira que es compresible ya que esas plagas a veces causaban enfermedades y querian mejorar la higiene del pais. Se estaban cazando moscas, mosquitos, roedoras y... gorreones? este no es como los demas. El dictador tenia una mente tan podrida que tuvo una obsecion con ese tipo de aves que hasta el mismo decia "las aves son animales del CAPITALISMO" ya que ellos consumian tambien grano, un alimento exclusivo para el pueblo como el decia y los gorreones comian bastante, el solamente tenia un solo objetivo... terminaria con esas plagas, fuese como fuese, sin embargo esa cruel forma de pensar no lo detendria, y los gorreones se llevaron la peor forma de caza, literalmente los mataban con pistolas, piedras, o hasta hacian tanto ruido como fuese posible para que los gorreones simplemente se cansaran y cayeran muertos al piso, hasta destruian sus nidos. NADIE descanso hasta que pusieron al gorreon al borde de la <strong>EXTINCION</strong>. la alimentacion del ave, langostas y algunos insectos comenzaron a atacar masivamente los cultivos de grano, haciendo que perdieran muchsimo mas grano, mas dinero y hasta provocando la muerte de muchas personas dentro del pais hasta, esta situacion realmente causo un gran caos, falta de dinero, de comida, habitaban mas las enfermedades y la casi extinsion de los gorreones solamente por una persona con mucha envidia, una persona con un conflicto unilateral con una especie de animales que nisiquiera sabian ni comprendian el concepto de lo que por lo menos era <strong>ODIAR</strong>... hablando de odiar, quien estaba realmente molesto, ¿la naturaleza o el dictador?
+        <div id="Hora"><p>11:47 P.m <br> Mentir</p></div>
+        <p style="color: red;">La rabia es corrosiva, tóxica y en muchos casos, irreversible sobre quien es depositada, lo unico que queda años despues es el camino de ruina que nos deja. Su unico legado es la advertencia de que esto jamas deberia volver a suceder.<br></p>
+        Es una de nuestras mejores habilidades como humanos, un poder que nos permite salir de una situacion peligrosa, mejorar nuestra situacion actual o simplemente vengarnos de algun mal que se nos hizo con solo una palabra. Sin embargo, lo que para muchos de nosotros suele ser una mentira piadosa e inofensiva, otros han decidido llevarlo mucho mas alla de cualquier limite moral, desbloqueando el verdadero potencial de esta tecnica, y obteniendo todo lo que siempre han querido diciendo las palabras correctas frente a las personas correctas. <br>
+        <br>
+        Por ejemplo James Hamilton Swing, tambien conocido como James Randi, o por su nombre artistico, El Asombroso Randi. Una persona que desde los años 40, en sus inicios como ilusionista y escapista, sentia un profundo amor por el arte, hacerle creer a aquellos hombres y mujeres que llenaban sus shows que aun habia algo mistico alla afuera, recordarles lo que habia quedado enterrado hace tantos años bajo lo monotono y frustrante de la vida adulta. Y lo lograba gracias a hazañas como encerrarse en un ataud bajo el agua por mas de una hora, o escapar de sus ataduras mientras se encontraba suspendido boca abajo sobre las cataratas del Niagara. <br> <br>
+        pero... bueno... sin embargo, esa admiracion por aquellos que compartian el escenario con el poco a poco se transformo en un profundo resentimiento. Algunos veian una oportunidad para aumentar sus riquezas, influencias y fama solo diciendo las palabras correctas frente a las personas correctas.
+        <br>
+        Esto lo digo por que me recuerda a kari, karina, karina esta pasando por un momento bastante complicado, su abuelo hace poco se fue de este mundo y no creo que sea facil superar aquello acontecido, aparte de ello, ah tenido vivencias nada agradables, esto me recuerda a lo de <strong>madurar antes de tiempo</strong>. Kari actua como actua por su pasado, tiene muchas heridas abiertas por ello, pero sabe ocultarlos, finge y maquilla esos dolores que tanto le pesan, igualmente yo la entiendo, no todo el tiempo puede estar asi, ¿o si? ¿siempre se siente asi? realmente la quiero conocer más, me interesa que es lo que siente, la otra vez, como digo, dijo y cuestiono si yo queria por que realmente queria o por simplemente saber como piensan las personas, tipo como para experimento, raton de indias, se entiende? okay, bueno, pues ese no es mi caso, no estoy mal de la cabeza y realmente se lo que quiero con ella. Ella necesita sanar, relamente no se si interferir o dejarla asi... me preocupa el estado mental de mi novia, simplemente me gustaria abrazarla y que con eso sea suficiente para calmar sus pensamientos, penas y cargas que tiene ella, pero recuerdo que ella tuvo que... 
+    </p>
+    <h3 class="fecha">Madurar antes de tiempo 15/10/24</h3>
+    <p>
+        <div id="Hora"><p>01:03 A.m <br> Ella es humana</p></div>
+        Me recordo a un video de tiktok que dice algo que realmente me gustaria decirselo a karina, decia algo como: pero te forzaron a crecer, encerraste a tu niña interior, esa que reia sin preocuparse, y ahora llevas una carga que no te correspondia tan pronto, te convenciste de que ser fuerte significaba ocultar esa vulnerabilidad, que el dolor te hacia crecer, pero ¿cuando fue que confundimos  madurar con dejar de sentir? a veces madurar no se trra de encerrarnos, si no de aprender a soltar lo que nos impide ser libres, esa niña sigue ahi, esperando a que la liberes, y le permitas sentir... otra vez.
+        <br>
+        Quiero que kari se pueda comunicar mejor conmigo, sus inconformidades, me dijo que mentia para hacer sentri a los demas mejor, para no causar problemas pero reconocia tambien que aun asi no los quiera causar de alguna u otra forma puede causarlos, y eso esta bien, no estar bien esta bien, no siempre tenemos que estar bien, en serio me gustaria poder hablar con ella sobre sus problemas, que me tenga esa confianza, que tenga la confianza suficiente para abrirse a los demas, o tan siquiera a mi. eh echo algunas cosas que estoy 90% seguro de que le han incomodado pero no ah dicho nada o que ah mentido con tal de hacerme sentir bien, me gusta equivocarme y aprender algo nuevo, pero si no me habla con sinceridad simplemente siento que no avanzo, pero en fin, se que esa confianza, esa seguridad ella me la dara en algun momento, no la presionare, no le dire nada, no me urge justo ahora tener toda la verdad absoluta que tiene ella, simplemente quiero que ella sea ella misma conmigo, pero ni ella sabe quien es ella, entonces, no lo se, quiero conocer a esa kari inconsciente, esa kari que puede decir cualquier palabra que pueda sonar como estupidez, pero que es verdadera, esa palabra verdadera o esa cruda realidad, pero que es sincero, mentir, igual lo usa como mecanismo de defensa a mi parecer, no es facil contarle tus problemas a los demas, no es facil darle tu confianza a los demas, no es facil no sentirse juzgado por los demas, no es facil, no es facil cuando sufriste a tan corta edad, no es facil cuando no eres alguien pleno, no es facil, no es facil, es un peso el cual ella ya se acostumbro, pero aun asi le causa un agotamiento emocional terrible, yo lo veo, eh deducido muchas cosas ultimamente sobre ella y la mayoria han sido ciertas, agradezco plenamente la confianza que kari tuvo para contarme eso, simplemente no lo puedo pasar por algo, ella no es ella, ella no muestra quien es realmente, y sinceramente la entiendo, asi lo hacia yo antes hasta que emmanuel todos los dias me gritaba cada que mentia, ahi deje de hacerlo, me volvi mas sincero, y eso me trajo problemas, pero ya pude nivelar mis mentiras con mi honestidad, dejare de hacer muchas cosas que antes hacia con kari y hare otras cosas que no eh echo con kari, le dare su espacio, pero espero solo espero, que ella sepa que si me necesita, estare para ella, aun que quizas yo tampoco me encuentre en mi mejor momento, ya por lo menos no me siento solo, no quiero que ella se sienta sola, ella no esta sola. <br>
+        <br>
+        Ojala se pueda sincerar en algun momento, mi niña esta cansada, yo la entiendo, quiero que mi brazo sirva como manta y ella se pueda tranquilizar. <br> <br>
+        <audio src="aud/MILO J - SINCERA TE (Video Oficial).mp3" controls></audio> <br>
+        Su amor, falso o no, yo lo aceptare.
+        <div id="Hora"><p>08:27 A.m<br> Tarde</p></div>
+        Voy tarde a la escuela, no me arregle del todo, no hice tarea ayer, me dormi tardisimo, me siento muy cansado, deberia dejar de hacer esto, esto de desvelarme, nisiquiera habia acomodado mi mochila ayer, vamos, estoy cansaod, estoy escribiendo esto directamente hacia mi escuela, entonces ajam, quiero descansar, estoy cansadisimo, ayer me dijo eso kari y la verdad no se cual sea su reaccion despues de haberse sincerado conmigo. Honestamente, espero que siga teniendome esa confianza.
+        <div id="Hora"><p>21:21 <br> Quiero ser papá</p></div>
+        Kari y yo estuvimos hablando sobre esto de ser papás y el echo de estar criando a algien, ella ya sabe mis sueños y que esa es mi mayor meta, mi mayor anhelo en esta vida, no puedo vivir tranquilo si se que no tendre hijos algun dia. Si yo me llego a enterar algun dia que soy esteril, ese mismo dia me mato, no encotrare otra razon para vivir, quiero un hijo que sea de mi sangre, quiero tenerlo con la pareja que mas amo en esta vida, que no por nada quiero tener un hijo, quiero darle una familia, quiero construir esa familia que yo no tuve, por eso eh estado trabajando arduamente estos ultimos años, por que no pienso quedarme atras, mis hijos son algo que amare y creo que son indispensables para mi propia existencia, sea lo que sea mi niño(a) o niñ@/s yo lo amare, pero necesito estar preparado economicamente y psicologicamente para tener un hijo y criar como a mi me gustaria, me gustaria tener una pareja que me apoye en ese aspecto, que em ayude a tener una relacion sana, tanto conmigo, con nuestro hijo, hay que saber comprender problemas, quiero tener ese futuro, quiero tenerlo con karina, quizas estoy queriendo volar, pero se todo lo que conlleva (no recuerdo si se escribe asi realmente pero x) ser padre, y realmente mis respetos a todos los padres del mundo por tener que criar a un hijo, eso no lo hace cualquier persona.
+        <div id="Hora"><p>21:32 <br> ¿Kari mamá?</p></div>
+        Aparte de que yo quiero ser papá, estuve hablando con kari sobre su perspectiva sobre lo que seria ser mamá y me dijo que le aterra la idea del parto, que es lo que puede pasar con el niño, que es lo que podria pasar con ella, saldria vivo el niño?, saldria viva ella?, realmente le daria al crio lo que se merece?, cuanto dinero se tiene que invertir? como se tienen que hacer muchas cosas para cuidarlo?, servicios medicos y etc. Tampoco le gusta la idea de tener que estar cuidando a un niño o tener que estar escuchando su llando, tampoco quiere cargar una vida dentro de ella ahora si que, no quiere vivir el proceso del embarazo, esos 9 meses, no los quiere vivir, por que realmente le gusta hacer muchas cosas y esa idea de embarazarse no le agrada mucho por el echo de aca, ajam, de que se tendria que limitar bastante a esto de no hacer nada, o no hacer casi nada para estar con el crio o tenerlo sano.
+        <div id="Hora"><p>22:03 <br> Dispuesto a mejorar</p></div>
+        Despues de eso le estuve diciendo a Karina que yo, realmente estoy dispuesto a mejorar, no solo por mis hijos o los hijos que quiero tener, si no que, quiero mejorar por esta relacion, quiero ser la persona que realmente merece karina en esta vida, siento que realmente mi forma de actuar actualmente es algo pobre, algo carente de sentido y tambien me considero alguien hormonal, pero no veamos todo lo malo, tambien vere el potencial que tengo, mi forma de pensar, lo que estoy dispuesto a hacer, lo que eh echo y lo que hago por mi futuro, realmente quiero un futuro con karina, quiero mejorar para ser la mejor opcion de karina, siempre quiero ser mejor opcion, es mas, hasta estoy dispuesto a ser mejor que ese tal Aru Corona que tanto le gusta, quiero mejorar en todo aspecto, quiero ser mejor presona, es mas, estoy dispuesto a comer... <strong>COMER</strong> si de por si eso me cuesta un monton, ahora imaginate, tantito peor, pero realmente no me importa que tenga que hacer para mejorar, mientras no haga daño a nadie todo bien, eso le decia a kari "Estoy realmente dispuesto a hacer lo que sea por esta relacion, mientras no haga daño a nadie" claro, si ella tambien esta dispuesta... aun que tambien la vi muy decidida, dijo... 
+        <div id="Hora"><p>22:30 <br>Yo tambien <strong style="color: aqua;">(futuro)</strong></p></div>
+        "yo tambien, relamente estoy dispuesta a hacer lo que sea por esto... me da cringe pero... iria a terapia, obviamente con un piscologo bueno, y cuando deje de depender economicamente de mis papás, mientras yo dependa economicamente de ellos, no me tomaran en serio" realmetne la entiendo, asi que, todo esto lleva un proceso y yo, realmente estoy dispues a hacer lo que sea con tal... <br>
+        <strong>SI ES CON ELLA, HAGO LO QUE SEA CON TAL DE HACER LO MEJOR PARA LOS DOS</strong> 
+    </p>
+    <h3 class="fecha">Cotidiano 16/10/24</h3>
+    <p>
+        <div id="Hora"><p>02:35 P.m <br> Dibujitos</p></div>
+        Pues realmente no tengo mucho que contar hoy realmente, hoy me dio tiempo de hacer todas mis cosas, y tambien, no se, amo a kari, hoy en la mañana llegue y estuve jugando FNF en el salon y justamente despues de eso... PUM, KARI ME REGALA UNOS DIBUJAZOS, no se como se escriba pero, WOW, <strong>ME ENCANTAN</strong> relamente me gustria darle algo de esa magnitud, la otra vez me estuvo preguntando 16 de mis personajes favoritos, y wow, me encantan los que me dibujo por ahora, realmente no se si sentirme mal por que me esta dando prioridad a mi, es decir, me gusta, me siento bien, me hace sentir bien sentir que soy la prioridad o que por lo menos importo en la vida de alguien pero tambien me gustaria darle algo de esa magnitud, no se que didbujarle, no se que darle, no se que... YA SE, ramos de flores, eso, un dia, solamente necesito dinero T_T pero se que podra lograr, solamente es cuestion de tener fe en esta vida para plantar el dinero y tenerlo, pero en fin, quiero regalarle flores, flores, flores, flores, realmente no pido mucho en cuanto a los regalos, tipo, siento que el mayor regalo que me puede dar alguien en una realcion es la confianza, la lealtad y la honestidad, esas 3 cosas realmente son las unicas que pido, pero en cosas materiales relamente no pido nada, no habia recibido tantas cosas como me las ah estado dando kari. <br> <br>
+        Realmente se siente bastante bien el echo de que te regalen algo, me sentia fatal, ahora siento que puedo comerme al mundo entero
+    </p>
+    <h3 class="fecha">Cerebro 22/10/24</h3>
+   <p>
+    Camino a la escuela me puse a grabar por que no tenia datos para poner musica en mis audifonos, asi que preferi grabar y escribir un poco sobre lo que hemos hablado kari y yo, o bueno lo que hablamos kari y yo el dia de ayer que fue una conversacion... o bueno le estuve escribiendo un poco sobre lo que estaba pasando en mi cabeza <br>
+    <br>
+    <div style="color: white;"  id="Hora"><p>10:17 A.m<br> Alma y mente</p></div>
+    <div class="conversation">
+        <div class="message" style="color: rgb(0, 47, 255);">
+            <img src="img/BritexPFP.jpg" alt="">
+            <p class="javier">
+                El otro día encontré un video que explicaba por qué tenemos alma. Mencionaba que, al morir, dejamos de pensar. Imagínate: un simple pedazo de carne con tantos recuerdos, conocimientos… todo lo que somos. Al final, somos solo un pedazo de carne. Somos nuestro cerebro, y ni siquiera nos conocemos a nosotros mismos; somos un misterio andante, cerebros intentando comprender a otros cerebros, todos impulsados por energía proveniente del sol, de las plantas, de los animales, y de nosotros mismos.
+            </p>
+        </div>
+    </div>
+    <div style="color: white;"  id="Hora"><p>10:22 A.m<br> Humandidad como energia y ciclo natural</p></div>
+    <div class="conversation">
+        <div class="message" style="color: rgb(0, 47, 255);">
+            <img src="img/BritexPFP.jpg" alt="">
+            <p class="javier">
+                Somos energía, y en cierto sentido, un tipo de parásito en busca de supervivencia y expansión. Al ser tantos, buscamos el control, ser dominantes, vivir. Pero, además de eso, somos esenciales para el mundo. Al morir, alimentamos a las plantas, a los insectos. Los gusanos nos devoran y eso ayuda a nutrir la tierra, lo cual, a su vez, contribuye a la vida de las plantas. Este ciclo nos lleva a regresar al ambiente, a la atmósfera, y de alguna forma seguimos aquí, como parte del aire que respiramos.
+                <br>
+                Este ciclo de muerte y vida es increíble. Hemos evolucionado tanto que hemos aprendido a controlar la energía, aunque no a crearla; solo a canalizarla. Incluso el simple hecho de estar viendo un teléfono implica gastar energía. Con solo tener una cuenta de Google, ya estamos utilizando recursos en servidores, que requieren de gran cantidad de energía y, en algunos casos, están ubicados en océanos, afectando ecosistemas marinos.
+            </p>
+        </div>
+    </div>
+    <div style="color: white;"  id="Hora"><p>10:30 A.m<br> Conciencia y limitaciones</p></div>
+    <div class="conversation">
+        <div class="message" style="color: rgb(0, 47, 255);">
+            <img src="img/BritexPFP.jpg" alt="">
+            <p class="javier">
+                Quizá nunca seremos completamente conscientes de nuestro impacto. Vivimos en una sociedad donde todo está conectado; cada acción que realizamos genera un efecto. Nunca podremos conocerlo todo, siempre seremos ignorantes en algún sentido. Aun así, tenemos que vivir el ahora, con lo que tenemos y mejorar en lo que podamos.
+            </p>
+        </div>
+    </div>
+    <div style="color: white;"  id="Hora"><p>10:38 A.m<br> vivir y existir</p></div>
+    <div class="conversation">
+        <div class="message" style="color: rgb(0, 47, 255);">
+            <img src="img/BritexPFP.jpg" alt="">
+            <p class="javier">
+                Vivir es un concepto tan sencillo, pero tan amplio. ¿Qué significa vivir? ¿Es simplemente existir? No, son conceptos distintos, y cada uno tiene un significado único. Nuestro cerebro constantemente busca patrones, y es fascinante ver cómo percibimos la realidad. Nos adaptamos a las personas, buscamos entenderlas, aunque a veces nos dejamos llevar por impulsos. La psicología nos enseña cómo influir en otros, aunque los conocimientos que adquirimos pueden usarse para bien o para mal.
+            </p>
+        </div>
+    </div>
+    <div style="color: white;"  id="Hora"><p>10:46 A.m<br> Ansiedad y adaptacion</p></div>
+    <div class="conversation">
+        <div class="message" style="color: rgb(0, 47, 255);">
+            <img src="img/BritexPFP.jpg" alt="">
+            <p class="javier">
+                Al final, somos el resultado de nuestras experiencias, de nuestra adaptación al entorno y a los demás. A veces, nuestras preocupaciones solo existen en nuestra mente, y nos causan angustia sin razón, lo cual a veces llamamos ansiedad. En realidad, la ansiedad es un mecanismo de supervivencia; es lo que nos hace actuar de ciertas maneras para evitar daños.
+                <br>
+                La mente funciona bien si cuidamos de nuestro cuerpo. Las rutinas y los hábitos saludables nos ayudan a mantenernos. No siempre estaremos conformes con nuestra apariencia, pero es parte de cómo nos adaptamos y cómo nos ven los demás.
+            </p>
+        </div>
+    </div>
+    <div style="color: white;"  id="Hora"><p>10:55 A.m<br> Desigualdad y prioridades</p></div>
+    <div class="conversation">
+        <div class="message" style="color: rgb(0, 47, 255);">
+            <img src="img/BritexPFP.jpg" alt="">
+            <p class="javier">
+                A veces pienso en los niños que no tienen la misma oportunidad de alimentarse bien, aquellos que enfrentan desigualdades económicas. Para ellos, la prioridad es cubrir necesidades básicas: comer, dormir, tener un lugar seguro. El sistema en el que vivimos, al final del día, es capitalista, y eso define muchas de nuestras prioridades.            </p>
+        </div>
+    </div>
+    <div style="color: white;"  id="Hora"><p>10:59 A.m <br> Relatividad cultural y universalidad del misterio</p></div>
+    <div class="conversation">
+        <div class="message" style="color: rgb(0, 47, 255);">
+            <img src="img/BritexPFP.jpg" alt="">
+            <p class="javier">
+                Todo esto afecta nuestro pensamiento y nuestra forma de ver el mundo. Podemos percibir ciertas cosas, pero solo en nuestro entorno, en nuestra cultura. Si nos vamos a otro país, todo cambia: la cultura, el lenguaje, los valores. Al final, todos somos parte de algo mucho más grande, y cada uno de nosotros sigue intentando comprender un mundo que nunca podremos entender del todo.
+        </div>
+    </div>
+    <h3 class="fecha">Mas intimo 26/10/24</h3>
+    <p> 
+        Últimamente, he estado sintiendo un gran impulso emocional y físico hacia Kari. No me refiero solo a caricias o besos, sino que he sentido muchas ganas de tener una conexión más íntima con ella, siempre con su consentimiento. Hemos hablado de nuestros límites previamente, y ambos acordamos que no habrá agresiones físicas o psicológicas, ni relaciones sexuales (ambos preferimos esperar). Sin embargo, ella dejó claro que, con su consentimiento, podría tocarla. Desde que lo mencionó, siento una mezcla de emoción y deseo, y tengo muchas ganas de explorar esta intimidad con ella.
+        <br>
+        A veces, cuando pienso en lo que me gustaría hacer, me encuentro nervioso y dudando. Me preocupa que ella, a pesar de darme su consentimiento, pueda sentirse incómoda o simplemente quiera "ser una buena novia." También me pasa que, mientras lo pienso, me desconecto un poco de la realidad, y no siempre sé cómo expresar estos pensamientos.</p>
+   </p>
+   <h3 class="fecha"><strong style="color: red;">Ayuda 1/11/24</strong></h3>
+   <p>
+    Estoy cansado de seguir vivo, muchas veces me pregunto si por lo menos vale la pena tener esta idea de seguir vivo, me siento aml, me siento acorralado, me siento perseguido por mis propios errores, no me siento suficiente para los demás, siento que necesito ser alguien mejor, se que este estado en el que estoy no es lo mejor, últimamente me eh sentido simplemente pesimo, pero ¿para quien quiero ser suficiente? ¿para quien? ¿valoraran por lo menos mi trabajo que empleo y mi tiempo que empleto para esas personas? ¿Cuándo será que me deje de sentir asi? simplemente estar pensando no me gusta, siento que una vez ya viviste algo en su mayor esplendor es fecil identificarlo en las demás personas, no soy dios, no soy nada parecido, no me gusta quien soy, solamente soy una persona con quizás muchas capacidades para hacer muchas cosas, pero ni siquiera yo se que son esas cosas, simplemente me siento cansado, no me gusta cargar con el peso, con este peso de ser quien soy, no me gusta ser yo, no me gusta vivir, no me siento cómodo, no quiero vivir, una vez empiezas a escribir y/o a hanlar sobre tus problemas, empiezan a cobrar razonamiento en la mente, en la cabeza, por eso muchas veces dicen "escribe cosas de las cuales estes agradecido" o cosas, asi, para ser mas conscientes de lo que nos rodea dia con dia, hazta que podamos lograr la "plenitud" o nuestra tranquilidad, pero simplemente siento que eso no funciona asi, siento que conmigo, soy mas que consciente de lo que pienso, de lo que hago, solamente no quiero vivir y tengo eso tan, pero tan presente, muchas veces puede sonar a que quiero preocupar a las demás personas o simplemente que lo quiero por atención, pero no, si lo digo es por que es un grito de ayuda, pero ya no siento la necesidad de pedir ayuda por que nadie hará nada, nadie tiene el poder de mi mente, nadie puede decirme que hacer o detenerme a hacer cualquier cosa que se me pase por mi mente, me siento inútil, me siento mal, me siento simplemente vacio, me siento aquí, en mi computador y siento que el mundo como lo conocía ya no es nada de lo que estoy viviendo actualmente, me siento mal, me siento inutl, siento  que ya no puedo seguir con esto, siento la necesidad de morir mas temprano que tarde, me quiero morir, todavía tengo mucha tarea pendiente, simplemente siento que ya no tengo la necesidad de hacerla, si me mato ya ya no tengo que preocupar a nadie, si me mato ya no pensare en nada ni nadie, simplemente seguire existiendo para ser uno mismo con el ecosistema y la naturaleza de lo que es vivir, muchas personas ni siquiera me recordaran, ni siquiera les importare, y digo, esta bien, cada quien decide lo que vivir, cada quien es protagonista de su propia vida, quiero ayudar a las demás personas o a las personas que yo veo mal, ver una sonrisa de kari… la sonrisa de kari es simplemente hermosa, aun que a veces me molesta no ser yo quien le saque alguna que otra sonrisa, una sonrisa sincera, simplemente no me siento suficiente si no la hago sonreir, pero mira que tampoco le diría a kari "riete" por que no seria una sonrisa o risa sincera, me siento vagamente inútil, mira que nisiquiera creo que sirva para este tipo de cosas, para por lo menos sentirme inútil... ni para eso sirvo maldita sea, quiero dejar de existir en vida, quiero gritar ayuda, pero en serio, lo eh echo tantas veces que ya no me sorprende que todos me prohíban hacer muchas cosas o que se preocupen de mi, simplemente quiero quedarme ahora con el "ayuda" en la garganta, estoy cansado, con ganas de no hacer nada mas que simplemente existir, no quiero que las demás personas se preocupen por mi, solo quiero dejar de existirm bastam no me gusta esto que estoy pensando, son las 12:05 de la tarde, morir es una opción archivada q tengo pero que no creo que sacare en algún momento, no quiero hacer nada por que no me creo con esta capacidad de hacer algo por mi mismo, me siento vacio, me siento mal, no quiero que nadie me hable, todo este tiempo en la preparatoria eh estado fingiendo, ¿realmente debería ser yo mismo con todos? cargar este peso de no ser yo mismo en la preparatoria me esta matando me siento inútil, ni para amar sirvo, como se supone que yo debería amar?, eh visto como kari se ah estado cortando, no se si ya le vieron las heridas, sus cortadas, simplemente me preocupa el estado mental de kari, me gustaria brindarle apoyo psicológico pero ella ah tenido muchas malas experiencias con psicólogos, simplemente la quiero ayudar pero con eso me siento inútil, con el echo de no poder hacer nada, me siento exhausto, amo a kari, me quiero matar.
+   </p>
+    ...
+</body>
+</html>
